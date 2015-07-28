@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <style>
+    body {
+    	margin: 0;
+    	text-align: center;
+    	height: 100%;
+    	margin: 0;
+    	position: relative;
+    }
+  	.button {
+  		display: block;
+  		padding: 20px;
+  		background: blue;
+  		color: white;
+  		width: 50%;
+  		text-align: center;
+  	}
+
+  </style>
+</head>
+<body>
+
+<a class="button" href="#">Button</a>
+
+<iframe src="frame.html" name="spike_purchase_iframe_0Ct2pduj" id="overlay" style="background-color: transparent; border: 0px none transparent; overflow: hidden; display: none; position: fixed; visibility: visible; margin: 0px; padding: 0px; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9999; -webkit-tap-highlight-color: transparent;" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+
+<script>
+	
+	var button = document.querySelector('.button');
+	var overlay = document.getElementById('overlay');
+
+	button.addEventListener('click', function(event){
+		event.preventDefault();
+		overlay.style.display = 'block';
+	});
+
+</script>
+
+</body>
+</html>
