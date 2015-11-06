@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #ddd;
+      margin: 0;
+    }
+
+    .spike-button, #spike_button_iframe_QmVpsE8f {
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      position: absolute;
+    }
+
+    #asset {
+      width: 750px;
+    }
+
+    video {
+      width: 750px;
+    }
+
+   @media only screen and (max-width: 750px) {
+     video {
+       width: 100%;
+     }
+     #asset {
+       width: 100%;
+     }
+   }
+  </style>
+</head>
+<body>
+
+  <!-- <video width="750px" height="577" controls>
+    <source src="http://0.0.0.0:8080/images/sp-overlay.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video> -->
+
+  <div id="asset"></div>
+  <script>
+  (function(){
+    "use strict"
+
+    var videoEl = document.createElement('video');
+
+    //videoEl.setAttribute('height', '577');
+    //videoEl.setAttribute('width', '750');
+    //videoEl.controls = true;
+    videoEl.autoplay = true;
+    videoEl.loop = true;
+
+    var videoSrc = document.createElement('source');
+    var videoSrc2 = document.createElement('source');
+    videoSrc.setAttribute('src', '../images/sp-overlay.mp4');
+    videoSrc.setAttribute('type', 'video/mp4');
+    videoSrc2.setAttribute('src', '../images/sp-overlay.ogg');
+    videoSrc2.setAttribute('type', 'video/ogg');
+    videoEl.innerHTML = 'Your browser does not support HTML5 video.';
+
+    videoEl.insertBefore(videoSrc2, videoEl.firstChild);
+    videoEl.insertBefore(videoSrc, videoEl.firstChild);
+
+
+    var spot = document.getElementById('asset');
+    spot.insertBefore(videoEl, spot.firstChild);
+  })();
+  </script>
+</body>
+</html>
